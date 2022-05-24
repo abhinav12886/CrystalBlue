@@ -1,12 +1,39 @@
-main  {
-    background-image: url('../images/background.png');
+/* main  {
+    background-image: url('https://media.istockphoto.com/videos/glitter-golden-stone-nugget-cracked-and-explode-on-black-background-video-id1317824828');
     position: relative;
     background-size: 100% 1280px;
     height: 640px;
     display: flex;
     justify-content: center;
     align-items: center;
+} */
+
+main  {
+    /* background-image: url('../images/background.png'); */
+    position: relative;
+    background-size: 100% 100%;
+    height: 640px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+#myVideo {
+    position: absolute;
+    /* background-size: 100% 1280px; */
+    min-width: 100%;
+    height: 640px;
+    display: flex;
+    justify-content:end;
+    /* justify-content: center; */
+    align-items: center;
+    /* position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%; */
+}
+
+
 main .image img{
     height:120px;
     width:120px;

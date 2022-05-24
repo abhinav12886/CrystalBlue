@@ -1,15 +1,29 @@
 //genre and language must we in small letter.release field has year only and release and imdb must be numbers
+// let dummy_movie={
+//     title:'unknown',
+//     description:'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae iusto veritatis reprehenderit voluptate, alias at. Consequatur dolore voluptate asperiores porro repellendus impedit nisi officiis fugit velit! Laborum, nemo cupiditate aperiam molestiae temporibus exercitationem doloribus esse provident vitae officiis necessitatibus molestias illo porro nobis commodi recusandae quisquam eaque voluptas eligendi. Culpa eligendi veritatis similique nihil. Eveniet libero facilis pariatur cupiditate soluta, sed iste dignissimos quisquam ipsam magni officiis possimus repudiandae blanditiis? Quas aliquid excepturi ad numquam eligendi est aut velit reprehenderit veritatis autem, praesentium reiciendis laboriosam odio ratione quam officiis necessitatibus neque temporibus dolorum quidem laudantium, quae rerum? Expedita, officia quidem!',
+//     actor:'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae iusto veritatis reprehenderit voluptate, alias at',
+//     genre:["all"],
+//     director:"none",
+//     language:'any',
+//     release:"none",
+//     imdb:0,
+//     quality:'hd',
+//     duration:'0 min',
+//     image:'#',
+//     link:'https://www.youtube.com/watch?v=0cj71zkW-88',
+// };
 let dummy_movie={
     title:'unknown',
     description:'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae iusto veritatis reprehenderit voluptate, alias at. Consequatur dolore voluptate asperiores porro repellendus impedit nisi officiis fugit velit! Laborum, nemo cupiditate aperiam molestiae temporibus exercitationem doloribus esse provident vitae officiis necessitatibus molestias illo porro nobis commodi recusandae quisquam eaque voluptas eligendi. Culpa eligendi veritatis similique nihil. Eveniet libero facilis pariatur cupiditate soluta, sed iste dignissimos quisquam ipsam magni officiis possimus repudiandae blanditiis? Quas aliquid excepturi ad numquam eligendi est aut velit reprehenderit veritatis autem, praesentium reiciendis laboriosam odio ratione quam officiis necessitatibus neque temporibus dolorum quidem laudantium, quae rerum? Expedita, officia quidem!',
-    actor:'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae iusto veritatis reprehenderit voluptate, alias at',
+    type:'None',
     genre:["all"],
-    director:"none",
+    brand:"none",
     language:'any',
-    release:"none",
-    imdb:0,
-    quality:'hd',
-    duration:'0 min',
+    manufactured:"none",
+    rating:0,
+    certification:'None',
+    price:0,
     image:'#',
     link:'https://www.youtube.com/watch?v=0cj71zkW-88',
 };
@@ -21,14 +35,14 @@ movieList.forEach(element => {
         dummy_movie.title=element.title;
         dummy_movie.description=element.description
         dummy_movie.image=element.image;
-        // dummy_movie.actor=element.actor
+        dummy_movie.actor=element.type;
         dummy_movie.genre=element.genre;
-        dummy_movie.director=element.director;
+        dummy_movie.director=element.brand;
         dummy_movie.language=element.language;
-        dummy_movie.release=element.release;
-        dummy_movie.imdb=element.imdb;
-        dummy_movie.quality=element.quality;
-        dummy_movie.duration=element.duration;
+        dummy_movie.release=element.manufactured;
+        dummy_movie.imdb=element.rating;
+        dummy_movie.quality=element.certification;
+        dummy_movie.duration=element.price;
         dummy_movie.link=element.link;
     }
 });

@@ -11,7 +11,7 @@ document.getElementById(sortby).classList.add('active');
 document.getElementById(lang).classList.add('active');
 
 let genrelist=['action','drama','all','thriller','comedy','sci-fi','adventure','horror','animated','suspense'];
-let sortbylist=['name','time','popularity'];
+let sortbylist=['name','time','popularity','price'];
 let langlist=['any','hindi','english'];
 
 document.querySelector(".home-nav>ul").addEventListener('click',function(element) {
@@ -57,11 +57,53 @@ else {
         }
     });
 }
+if(genre=='action') 
+{
+    requiredMovieList = movieList.slice(1,5);
+}
+else if(genre=='drama') 
+{
+    requiredMovieList = movieList.slice(6,8);
+}
+else if(genre=='thriller') 
+{
+    requiredMovieList = movieList.slice(3,9);
+}
+else if(genre=='comedy') 
+{
+    requiredMovieList = movieList.slice(8,12);
+}
+else if(genre=='sci-fi') 
+{
+    requiredMovieList = movieList.slice(2,7);
+}
+else if(genre=='adventure') 
+{
+    requiredMovieList = movieList.slice(4,6);
+}
+else if(genre=='horror') 
+{
+    requiredMovieList = movieList.slice(11,14);
+}
+else if(genre=='animated') 
+{
+    requiredMovieList = movieList.slice(10,15);
+}
+else if(genre=='suspense') 
+{
+    requiredMovieList = movieList.slice(5,9);
+}
+
+
 if(sortby=='popularity') {
-    requiredMovieList.sort(function(a,b) {return b.imdb-a.imdb});
+    requiredMovieList.sort(function(a,b) {return b.rating-a.rating});
 }
 else if(sortby=='time') {
-    requiredMovieList.sort(function(a,b) {return b.release-a.release});
+    requiredMovieList.sort(function(a,b) {return b.manufactured-a.manufactured});
+}
+
+else if(sortby=='price') {
+    requiredMovieList.sort(function(a,b) {return b.price-a.price});
 }
 else {
     requiredMovieList.sort(function(a,b){
@@ -101,15 +143,16 @@ function showMore() {
     document.querySelector('.show-more').remove();
     if(requiredMovieList.length>position+step*round) {
         for (let index = position; index <position+step*round; index++) {
-            obj.innerHTML+='<div class="movie"><a href="./mdetail.html?id='+requiredMovieList[index].id+'"><img src="'+requiredMovieList[index].image+'" alt=""></a><p><i class="fa fa-star"></i> '+requiredMovieList[index].imdb+'</p></div>'; 
+            obj.innerHTML+='<div class="movie"><a href="./mdetail.html?id='+requiredMovieList[index].id+'"><img src="'+requiredMovieList[index].image+'" alt=""></a><p><i class="fa fa-star"></i> '+requiredMovieList[index].rating+'</p></div>'; 
          }
          obj.innerHTML+='<div class="show-more"><button class="btn btn-large btn-outline-primary " onclick=showMore()>Show More</button></div>';
          position=position+step*round;
     }
     else {
         for (let index = position; index < requiredMovieList.length; index++) {
-            obj.innerHTML+='<div class="movie"><a href="./mdetail.html?id='+requiredMovieList[index].id+'"><img src="'+requiredMovieList[index].image+'" alt=""></a><p><i class="fa fa-star"></i> '+requiredMovieList[index].imdb+'</p></div>'; 
+            obj.innerHTML+='<div class="movie"><a href="./mdetail.html?id='+requiredMovieList[index].id+'"><img src="'+requiredMovieList[index].image+'" alt=""></a><p><i class="fa fa-star"></i> '+requiredMovieList[index].rating+'</p></div>'; 
          }
     }
 }
 showMore();
+
